@@ -14,7 +14,7 @@ You need Node.js 20 or newer. Copy the whole block below into a terminal, and pr
 mkdir RoFocus
 cd RoFocus 
 git clone https://github.com/Reda3400/RoFocus.git 
-npm install 
+npm install --ignore-scripts
 npm run build
 sh scripts/install-shortcut.sh
 ```
