@@ -11,9 +11,8 @@ A calm study app: choose your modules, tick tasks, set a focus time, run the tim
 You need Node.js 20 or newer. Copy the whole block below into a terminal, and press Enter:
 
 ```sh
-mkdir RoFocus
-cd RoFocus 
 git clone https://github.com/Reda3400/RoFocus.git 
+cd RoFocus 
 npm install --ignore-scripts
 npm run build
 sh scripts/install-shortcut.sh
