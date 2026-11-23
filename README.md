@@ -8,7 +8,7 @@ A calm study app: choose your modules, tick tasks, set a focus time, run the tim
 
 ## Set up in one go
 
-You need Node.js 20 or newer. Copy the whole block below into a terminal, replace the clone address with your repository link when you have it, and press Enter:
+You need Node.js 20 or newer. Copy the whole block below into a terminal, and press Enter:
 
 ```sh
 mkdir RoFocus
