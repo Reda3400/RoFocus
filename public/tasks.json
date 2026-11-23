@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "t1",
+      "moduleId": "java-1",
+      "title": "Study checked and unchecked exceptions hierarchy",
+      "completed": true,
+      "priority": "high",
+      "estimatedMinutes": 25
+    },
+    {
+      "id": "t2",
+      "moduleId": "java-1",
+      "title": "Implement custom exception classes with cause chaining",
+      "completed": true,
+      "priority": "medium",
+      "estimatedMinutes": 20
+    },
+    {
+      "id": "t3",
+      "moduleId": "java-1",
+      "title": "Practice try-with-resources and AutoCloseable interface",
+      "completed": false,
+      "priority": "high",
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "t4",
+      "moduleId": "java-1",
+      "title": "Review ExecutorService and Callable/Future patterns",
+      "completed": false,
+      "priority": "high",
+      "estimatedMinutes": 45
+    },
+    {
+      "id": "t5",
+      "moduleId": "java-1",
+      "title": "Complete concurrency synchronization lab exercises",
+      "completed": false,
+      "priority": "medium",
+      "estimatedMinutes": 40
+    },
+    {
+      "id": "ts1",
+      "moduleId": "ts-1",
+      "title": "Study conditional types and infer keyword deeply",
+      "completed": true,
+      "priority": "high",
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "ts2",
+      "moduleId": "ts-1",
+      "title": "Build custom utility types for strict API responses",
+      "completed": false,
+      "priority": "high",
+      "estimatedMinutes": 35
+    },
+    {
+      "id": "ts3",
+      "moduleId": "ts-1",
+      "title": "Implement generic repository pattern interface",
+      "completed": false,
+      "priority": "medium",
+      "estimatedMinutes": 40
+    },
+    {
+      "id": "n1",
+      "moduleId": "net-1",
+      "title": "Trace TLS 1.3 1-RTT handshake packets",
+      "completed": false,
+      "priority": "high",
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "n2",
+      "moduleId": "net-1",
+      "title": "Study X.509 certificate validation workflows",
+      "completed": false,
+      "priority": "medium",
+      "estimatedMinutes": 25
+    },
+    {
+      "id": "n3",
+      "moduleId": "net-1",
+      "title": "Review mutual TLS (mTLS) implementation guides",
+      "completed": false,
+      "priority": "high",
+      "estimatedMinutes": 35
+    }
+  ]
+}

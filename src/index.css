@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@theme {
+  --color-c1: #fdfcdc;
+  --color-c2: #fed9b7;
+  --color-c3: #f07167;
+  --color-c4: #00afb9;
+  --color-c5: #0081a7;
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Manrope', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-c1);
+  color: var(--color-c5);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* No scroll bar is drawn anywhere; scrolling itself still works. */
+*, *::before, *::after {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Hide scrollbar for apple-style wheels */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
