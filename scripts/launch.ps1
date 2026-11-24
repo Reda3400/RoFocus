@@ -1,11 +1,21 @@
 $ErrorActionPreference = "Stop"
 
-$Root = Resolve-Path "$PSScriptRoot\.."
-$Port = if ($env:REFOCUS_PORT) { $env:REFOCUS_PORT } else { "4173" }
-$Url = "http://localhost:$Port/"
+try {
+    $Root = (Resolve-Path "$PSScriptRoot\..").Path
+    $Port = if ($env:REFOCUS_PORT) { $env:REFOCUS_PORT } else { "4173" }
+    $Url = "http://localhost:$Port/"
+
+    if (-not (Test-Path "$Root\dist\index.html")) {
+        throw "RoFocus is not built yet. Run: npm install --ignore-scripts; npm run build"
+    }
+
+    # Windows usually installs Python as python.exe; python3 is only a fallback.
+    $PythonCmd = Get-Command python -CommandType Application -ErrorAction SilentlyContinue
+    if (-not $PythonCmd) { $PythonCmd = Get-Command python3 -CommandType Application -ErrorAction SilentlyContinue }
+    if (-not $PythonCmd) { throw "Python 3 is required. Install it and add it to PATH." }
 
 # Start the Python server in the background using Start-Process
-$ServerProcess = Start-Process python3 -ArgumentList "`"$Root\scripts\serve.py`"", "`"$Root\dist`"", "$Port" -NoNewWindow -PassThru
+$ServerProcess = Start-Process $PythonCmd.Source -ArgumentList "`"$Root\scripts\serve.py`"", "`"$Root\dist`"", "$Port" -NoNewWindow -PassThru
 
 # Ensure cleanup on exit
 try {
@@ -25,7 +35,7 @@ try {
     }
 
     if (-not $connected) {
-        Write-Warning "Server did not start in time."
+        throw "RoFocus server did not start on port $Port."
     }
 
     # Open the browser
@@ -40,4 +50,9 @@ finally {
     if ($ServerProcess -and -not $ServerProcess.HasExited) {
         Stop-Process -Id $ServerProcess.Id -Force -ErrorAction SilentlyContinue
     }
+}
+} catch {
+    Write-Host $_ -ForegroundColor Red
+    Read-Host "Press Enter to close"
+    exit 1
 }
